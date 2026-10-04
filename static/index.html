@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Media Chatbot</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: min(920px, 90%);
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      padding: 24px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      box-sizing: border-box;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1px solid #475569;
+      background: #0b1120;
+      color: #f8fafc;
+      resize: vertical;
+    }
+
+    .toolbar {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    select, button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+
+    select {
+      background: #111827;
+      color: white;
+      border: 1px solid #475569;
+    }
+
+    button {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .output {
+      margin-top: 24px;
+      background: #111827;
+      border-radius: 12px;
+      padding: 16px;
+      min-height: 70px;
+    }
+
+    .media-box {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    img, video, iframe {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      background: black;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Media Chatbot</h1>
+
+    <textarea id="promptInput" placeholder="Describe the image, PDF, or video you want..."></textarea>
+
+    <div class="toolbar">
+      <select id="mediaType">
+        <option value="">Auto detect</option>
+        <option value="image">Image</option>
+        <option value="pdf">PDF</option>
+        <option value="video">Video</option>
+      </select>
+      <button id="generateBtn">Generate</button>
+    </div>
+
+    <div id="status" class="output">Ready.</div>
+    <div id="mediaPreview" class="media-box hidden"></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
